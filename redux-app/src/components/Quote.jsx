@@ -6,14 +6,17 @@ const Quote = (props) => {
 
   return (
   <div>  
-    <h2>{props.test}</h2>
+    <h2>Cat Fact: {props.quote}</h2>
     <button onClick={props.getQuote}>Get New Quote</button>
   </div>
   )
 };
 
 const mapStateToProps = (state) => {
- return {test: state.test}
+ return {
+   quote: state.quote,
+   loading: state.loading
+ }
 };
 
 const mapDispatchToProps = { getQuote };
