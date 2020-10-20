@@ -2,7 +2,7 @@ const initialState = {
   quote: "",
   loading: false
 };
-const randomNum = () => Math.floor(Math.random() * 266)
+
 
 export const catReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,6 +12,7 @@ export const catReducer = (state = initialState, action) => {
         loading: true
       }
     case "FETCHING_QUOTE_SUCCESS":
+      const randomNum = () => Math.floor(Math.random() * (action.payload.length -1));
       return {
         ...state,
         quote: action.payload[randomNum()].text,
